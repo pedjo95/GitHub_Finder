@@ -17,13 +17,14 @@ searchUser.addEventListener('keyup', (e) => {
       console.log(data);
       if(data.profile.message === 'Not Found') {
         // Show alert
-
+        ui.showAlert('User NOT Found', 'alert alert-danger');
       } else {
         // Show profile
         ui.showProfile(data.profile);
       }
     }) 
   } else {
-    // Show alet
+    // Clear 
+    ui.clearProfile();
   }
 });
