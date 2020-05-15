@@ -1,5 +1,6 @@
 // Init class
 const github = new GitHub;
+const ui = new UI;
 
 // Input
 const searchUser = document.querySelector('#searchUser');
@@ -15,12 +16,14 @@ searchUser.addEventListener('keyup', (e) => {
     .then(data => {
       console.log(data);
       if(data.profile.message === 'Not Found') {
+        // Show alert
 
       } else {
-
+        // Show profile
+        ui.showProfile(data.profile);
       }
     }) 
   } else {
-    alert("Please fill in the spaces");
+    // Show alet
   }
 });
